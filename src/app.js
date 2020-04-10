@@ -50,7 +50,7 @@ app.delete("/repositories/:id", (request, response) => {
   const repoIndex = repositories.findIndex(repository => repository.id === id);
   if(repoIndex < 0) return response.status(400).send();
 
-  repositories.splice(repoIndex);
+  repositories.splice(repoIndex, 1);
   return response.status(204).send();
 
 });
